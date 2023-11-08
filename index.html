@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Soft Body Physics</title>
+
+        <style>
+            body {
+                margin: 0;
+                overflow: hidden;
+            }
+        </style>
+
+        <!-- Import p5.js -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js'></script>
+        
+        <!-- Import local code for simulation -->
+        <script src='simulation.js'></script>
+
+        <script>
+            // Simulation Parameters
+            var settings = {
+                gravity: false,
+                nodeCount: 20,
+                pressure: 1000,
+                springConstant: 5,
+                springDamping: 8,
+                animationSpeed: 80
+            }
+
+            var simulation;
+
+            // p5.JS Setup
+            function setup() {
+                canvas = createCanvas(windowWidth, windowHeight);
+                canvas.parent('container');
+
+                simulation = new Simulation(windowWidth/2, windowHeight/2, settings);
+            }
+
+            // p5.JS Draw Loop
+            function draw() {
+                // Draw Background
+                colorMode(RGB, 255);
+                background(30);
+
+                // Draw Simulation
+                colorMode(HSB, 100);
+                simulation.Draw();
+            }
+
+            // p5.JS function called when the screen is resized
+            function windowResized() {
+                resizeCanvas(windowWidth, windowHeight, true);
+            }
+        </script>
+    </head>
+    <body>
+        <div id='container'></div>
+    </body>
+</html>
