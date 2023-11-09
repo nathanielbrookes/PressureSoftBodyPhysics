@@ -1,9 +1,8 @@
 # Pressure Soft Body Physics
 
-<div>
-    <img src='animation.gif' alt='Users can interact with this project using their mouse' width='400' />
-    <p style='font-style:italic;'>Users can interact with this project using their mouse</p>
-</div>
+<img src='animation.gif' alt='Users can interact with this project using their mouse' width='400' />
+
+_Users can interact with this project using their mouse_
 
 ## Background
 I have followed an implementation provided by Maciej Matyka to create a 2D physics simulation of a soft body.
@@ -19,10 +18,9 @@ As opposed to rigid bodies (where the object's shape is fixed), the shape of sof
 
 In this simulation, the soft body is composed of many points/nodes, which are connected by invisible springs. Each node is connected by two springs (one for each adjacent node).
 
-<div>
-    <img src='image.png' alt='Diagram of Nodes and Springs' width='200' />
-    <p style='font-style:italic;'>Diagram showing nodes in black and springs in red</p>
-</div>
+<img src='image.png' alt='Diagram of Nodes and Springs' width='200' />
+
+_Diagram showing nodes in black and springs in red_
 
 The simulation first calculates and accumulates the forces that are acting on each node. External forces (e.g. gravity) are processed first, followed by the internal forces of the springs. Finally, an internal pressure force is added which inflates the object like a balloon and prevents it from collapsing.
 
@@ -33,10 +31,9 @@ To simulate collision detection with the walls, the program regularly checks eve
 
 The program checks the x and y position values separately, and if either value goes outside the canvas, the program will invert the relevant component of the node's velocity. For example, if a node's x position value is outside the canvas, the x component of the node's velocity will be inverted. This simulates an effect similar to a laser beam bouncing off a mirror.
 
-<div>
-    <img src='image2.png' alt='Diagram showing a node bouncing off the Canvas Wall Boundary' width='200' />
-    <p style='font-style:italic;'>Diagram showing a node bouncing off the Canvas Wall Boundary</p>
-</div>
+<img src='image2.png' alt='Diagram showing a node bouncing off the Canvas Wall Boundary' width='200' />
+
+_Diagram showing a node bouncing off the Canvas Wall Boundary_
 
 I have also used min() and max() functions to constrain each node's position. This ensures that if a node is outside the canvas, it will be moved back within the bounds of the canvas.
 
