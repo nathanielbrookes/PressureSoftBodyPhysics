@@ -1,5 +1,10 @@
 # Pressure Soft Body Physics
 
+<div>
+    <img src='animation.gif' alt='Users can interact with this project using their mouse' width='400' />
+    <p style='font-style:italic;'>Users can interact with this project using their mouse</p>
+</div>
+
 ## Background
 I have followed an implementation provided by Maciej Matyka to create a 2D physics simulation of a soft body.
 
